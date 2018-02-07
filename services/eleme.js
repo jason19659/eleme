@@ -35,11 +35,11 @@ async function request ({mobile, url} = {}) {
   return (async function lottery (phone) {
     const sns = cookie[index]
 
-    if (!query.sn
-      || !query.lucky_number
-      || isNaN(query.lucky_number)
-      || url.indexOf(`${origin}/hongbao/`) !== 0
-      || !sns) {
+    if (!query.sn ||
+      !query.lucky_number ||
+      isNaN(query.lucky_number) ||
+      url.indexOf(`${origin}/hongbao/`) !== 0 ||
+      !sns) {
       throw new Error('饿了么红包链接不正确\n或\n请求饿了么服务器失败')
     }
 
@@ -52,6 +52,7 @@ async function request ({mobile, url} = {}) {
     console.log('绑定手机号', phone)
 
     // 领红包
+    /* eslint camelcase: 0 */
     const {data: {promotion_records = []}} = await request.post(`/restapi/marketing/promotion/weixin/${sns.openid}`, {
       device_id: '',
       group_sn: query.sn,
