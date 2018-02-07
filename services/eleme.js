@@ -62,7 +62,7 @@ async function request ({mobile, url} = {}) {
       platform: query.platform,
       sign: sns.eleme_key,
       track_id: '',
-      unionid: 'fuck',
+      unionid: 'fuck', // 别问为什么传 fuck，饿了么前端就是这么传的
       weixin_avatar: '',
       weixin_username: ''
     })
