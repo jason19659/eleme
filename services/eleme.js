@@ -40,7 +40,7 @@ async function request ({mobile, url} = {}) {
       || isNaN(query.lucky_number)
       || url.indexOf(`${origin}/hongbao/`) !== 0
       || !sns) {
-      throw new Error('饿了么红包链接不正确 或 请求饿了么服务器失败')
+      throw new Error('饿了么红包链接不正确\n或\n请求饿了么服务器失败')
     }
 
     phone = phone || `138${String(Math.random() * 10).slice(-8)}`
